@@ -78,7 +78,7 @@
     <header class="header slider-fade">
         <div class="owl-carousel owl-theme">
             <!-- The opacity on the image is made with "data-overlay-dark="number". You can change it using the numbers 0-9. -->
-            <div class="text-center item bg-img" data-overlay-dark="2" data-background="img/slider-2.jpg">
+            <div class="text-center item bg-img parallax-bg" data-overlay-dark="1" data-background="img/slider-2.jpg" style="background-image: url(img/slider-2.jpg);">
                 <div class="v-middle caption">
                     <div class="container">
                         <div class="row">
@@ -98,7 +98,7 @@
                     </div>
                 </div>
             </div>
-            <div class="text-center item bg-img" data-overlay-dark="2" data-background="img/slider-3.jpg">
+            <div class="text-center item bg-img parallax-bg" data-overlay-dark="2" data-background="img/slider-3.jpg" style="background-image: url(img/slider-3.jpg);">
                 <div class="v-middle caption">
                     <div class="container">
                         <div class="row">
@@ -118,7 +118,7 @@
                     </div>
                 </div>
             </div>
-            <div class="text-center item bg-img" data-overlay-dark="3" data-background="img/slider-4.jpg">
+            <div class="text-center item bg-img parallax-bg" data-overlay-dark="3" data-background="img/slider-4.jpg"  style="background-image: url(img/slider-4.jpg);">
                 <div class="v-middle caption">
                     <div class="container">
                         <div class="row">
@@ -138,7 +138,7 @@
                     </div>
                 </div>
             </div>
-            <div class="text-center item bg-img" data-overlay-dark="4" data-background="img/slider-5.jpg">
+            <div class="text-center item bg-img parallax-bg" data-overlay-dark="4" data-background="img/slider-5.jpg"  style="background-image: url(img/slider-5.jpg);">
                 <div class="v-middle caption">
                     <div class="container">
                         <div class="row">
@@ -158,7 +158,7 @@
                     </div>
                 </div>
             </div>
-            <div class="text-center item bg-img" data-overlay-dark="5" data-background="img/slider-6.jpg">
+            <div class="text-center item bg-img parallax-bg" data-overlay-dark="5" data-background="img/slider-6.jpg"  style="background-image: url(img/slider-6.jpg);">
                 <div class="v-middle caption">
                     <div class="container">
                         <div class="row">
@@ -178,7 +178,7 @@
                     </div>
                 </div>
             </div>
-            <div class="text-center item bg-img" data-overlay-dark="6" data-background="img/slider-7.jpg">
+            <div class="text-center item bg-img parallax-bg" data-overlay-dark="6" data-background="img/slider-7.jpg"  style="background-image: url(img/slider-7.jpg);">
                 <div class="v-middle caption">
                     <div class="container">
                         <div class="row">
@@ -198,7 +198,7 @@
                     </div>
                 </div>
             </div>
-            <div class="text-center item bg-img" data-overlay-dark="7" data-background="img/treatment.jpg">
+            <div class="text-center item bg-img parallax-bg" data-overlay-dark="7" data-background="img/treatment.jpg"  style="background-image: url(img/treatment.jpg);">
                 <div class="v-middle caption">
                     <div class="container">
                         <div class="row">
@@ -952,6 +952,16 @@
     <script src="js/datepicker.js"></script>
     <script src="js/smooth-scroll.min.js"></script>
     <script src="js/custom.js"></script>
+    <script>
+        window.addEventListener("scroll", function () {
+          const parallaxItems = document.querySelectorAll(".parallax-bg");
+          parallaxItems.forEach(item => {
+            const speed = 0.5; // You can adjust speed here
+            const offset = window.scrollY;
+            item.style.backgroundPositionY = `${offset * speed}px`;
+          });
+        });
+      </script>
 </body>
 
 <style>
@@ -960,6 +970,13 @@
     }
     .svicon {
         margin-bottom: 20px;
+    }
+    .parallax-bg {
+        background-attachment: fixed;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center center;
+        transition: background-position 0.2s ease-out;
     }
 </style>
 </html>
