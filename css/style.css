@@ -5544,3 +5544,7 @@ select {
         text-align: center;
     }
 }
+
+.input1_inner:after {
+    display: none;
+}
